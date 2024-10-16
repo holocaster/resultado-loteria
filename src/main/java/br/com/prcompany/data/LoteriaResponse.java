@@ -19,6 +19,16 @@ public class LoteriaResponse {
 
     private Integer numero;
 
+    private Integer numeroConcursoProximo;
+
+    public Integer getNumeroConcursoProximo() {
+        return numeroConcursoProximo;
+    }
+
+    public void setNumeroConcursoProximo(Integer numeroConcursoProximo) {
+        this.numeroConcursoProximo = numeroConcursoProximo;
+    }
+
     public boolean isAcumulado() {
         return acumulado;
     }
