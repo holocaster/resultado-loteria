@@ -1,6 +1,7 @@
 package br.com.prcompany;
 
 import br.com.prcompany.data.LoteriaResponse;
+import br.com.prcompany.data.RateioPremio;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -50,7 +51,9 @@ public class Main {
                     System.out.println("Conta de quantos números acertados: " + count);
 
                     if (count > 3) {
+                        RateioPremio rateioPremio = loteriaResponse.getListaRateioPremio().stream().filter(obj -> obj.getDescricaoFaixa().contains(String.valueOf(count))).findFirst().orElse(null);
                         System.out.println("ACERTOU _________" + count);
+                        System.out.println("GANHOU___________RS: " + rateioPremio.getValorPremio());
                     }
                     System.out.println("\n----------------------------------------------------");
                 }
